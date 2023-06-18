@@ -1,0 +1,146 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col">
+            <div class="row mt-2">
+                <div class="col">
+                    <h1>Bill</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>Tripify Services</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="float-left">
+                        Contact Us: tripify@abc.com
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="float-right">
+                        Buyer Name: {{ currentBuyer.username }}
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="float-left">
+                        Date: {{ currentBuyer.date | date:'fullDate'}}
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="float-right">
+                        Buyer Id: {{currentBuyer.id }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="table-responsive m-2"></div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Number</th>
+                    <th>Name</th>
+                    <th>Amount</th>
+                    <th>Tax</th>
+                    <th>Miles</th>
+                    <th>Discount</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr> -->
+                <ng-container *ngFor="let item of cartItems">
+                    <tr *ngIf="item.type == 'flight'">
+                        <td>{{ item.type }}</td>
+                        <td>{{ item.flightNumber }}</td>
+                        <td>{{ item.flightName }}</td>
+                        <td>${{ item.cost }}</td>
+                        <td>${{ item.cost * 0.15 }}</td>
+                        <td>{{ item.miles }}</td>
+                        <td> <ng-container *ngIf="discount; else no_disc">
+                             ${{ item.cost * 0.2 }} </ng-container>
+                             </td>
+                        <ng-template #no_disc>$0</ng-template>
+                        
+                    </tr>
+                </ng-container>
+
+                <ng-container *ngFor="let item of cartItems">
+                    <tr *ngIf="item.type == 'hotel'">
+                        <td>{{ item.type }}</td>
+                        <td>{{ item.hotelNo }}</td>
+                        <td>{{ item.hotelName }}</td>
+                        <td>${{ item.cost }}</td>
+                        <td>${{ item.cost * 0.15 }}</td>
+                        <td>--</td>
+                        <td *ngIf="discount; else no_disc"> ${{ item.cost * 0.2 }} </td>
+                        <td><ng-template #no_disc> $0</ng-template></td>
+                        
+                    </tr>
+                </ng-container>
+                <tr>
+                    <button (click)="redeemMiles()">Redeem Mileage</button> 
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <h5>Amount:</h5>
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>${{ amount }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col">
+                <div class="col-15">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col">
+                                <div class="Form-group mx-2 my-3">
+                                    <label ><b>FirstName:</b></label>
+                                    <input for="text" name="firstname" id="firstname" size="31.5"><br><br>
+                                    <label> <b>Middlename:</b> </label>     
+									<input type="text"  name="middlename" id="middlename" size="29"><br><br>   
+									<label><b> Lastname:</b> </label>  
+                                    <input type="text" name="lastname" id= "lastname" size="32"> 
+                                    <br><br> 
+                                    <label for="creditcardtype"><b>Credit Card Type:</b> </label>
+									<input id="creditcardtype" maxlength="35" type="text" name="creditcardtype" size="25"><br><br>
+    
+									<label for="cardnumber"><b>Card Number:</b></label>
+									<input id="cardnumber" type="text" pattern="[0-9]*" name="cardnumber" size="28"><br><br>
+									<label for="expiration"><b>Expiration (mm/yy):</b></label>
+									<input id="expiration" type="text" pattern="[0-9]*" name= "expiration" size="22"><br><br>
+                                    <label for="securitycode"><b>CVV:</b></label>
+									<input id="cvv" type="text" pattern="[0-9]*" size="38">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row m-2">
+        <div class="table-responsive m-5">
+            <button type="button" class="btn btn-secondary ml-5 w-75" (click)="addBill()">
+                Pay Amount
+            </button>
+        </div>
+    </div>
+</div>

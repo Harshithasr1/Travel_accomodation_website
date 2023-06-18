@@ -1,0 +1,166 @@
+<!-- <div fxLayout="column" fxFill>
+    <div fxLayout="row" fxFlex="10" style="background-color:lightgrey ;">
+    </div>
+    <div fxFlex fxLayout="row">
+        <div fxFlex="6" fxLayout="column" style="background-color:lightgrey;">
+
+        </div>
+        <div fxFlex fxLayout="column">
+            <div fxFlex="10" fxLayout="row" style="background-color:grey;">
+
+            </div>
+            <div fxFlex fxLayout="row">
+                <div class="example-container mat-elevation-z8">
+
+                    <div class="example-header">
+                        <mat-form-field>
+                            <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+                        </mat-form-field>
+                    </div>
+
+                    <mat-table #table [dataSource]="dataSource">
+
+                        <ng-container matColumnDef="flight_name">
+                            <mat-header-cell *matHeaderCellDef> flight_name </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.flightName}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="flight_no">
+                            <mat-header-cell *matHeaderCellDef> flight_no </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.flightNumber}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="source">
+                            <mat-header-cell *matHeaderCellDef> source </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.source}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="destination">
+                            <mat-header-cell *matHeaderCellDef> destination </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.destination}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="date">
+                            <mat-header-cell *matHeaderCellDef> date </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="arrival_time">
+                            <mat-header-cell *matHeaderCellDef> arrival_time </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.arrivalTime}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="depart_time">
+                            <mat-header-cell *matHeaderCellDef> depart_time </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.departureTime}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="duration">
+                            <mat-header-cell *matHeaderCellDef> duration </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.duration}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="cost">
+                            <mat-header-cell *matHeaderCellDef>cost </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.cost}} </mat-cell>
+                        </ng-container>
+                        <!-- <ng-container matColumnDef="button">
+                        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> <input type="button" value="Book"> </mat-cell>
+                      </ng-container> -->
+
+                        <!-- <ng-container matColumnDef="button">
+                            <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> <button type="button"
+                                    class="btn btn-primary-outline pull-right" (click)="addToCart(element);"><i
+                                        class="fa fa-plus"></i> Book</button> </mat-cell>
+                        </ng-container>
+
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    </mat-table>
+                </div>
+            </div>
+        </div>
+        <div fxFlex="6" fxLayout="column" style="background-color:lightgrey;">
+
+        </div>
+    </div>
+    <div fxLayout="row" fxFlex="5" style="background-color:lightgray ;">
+
+    </div>
+</div> -->
+<!-- 
+
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-lg-4 my-2" *ngFor="let item of allItems">
+                    <div class="card bg-dark">
+                        <p class="card-header text-white bg-dark">{{ item.subCategory.category.name }}/{{ item.subCategory.name }}</p>
+                        <div class="media-container">
+                            <img class="card-img" [src]="item.image" width="244.53" height="244.53" [alt]=""
+                                enctype='multipart/form-data'>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="text-left font-weight-bolder text-white">Item:</p>
+                                </div>
+                                <div class="col-6">
+                                    <h5 class="card-title text-white"> {{ item.name }}</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="card-text text-white">Price: {{item.price }}</p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 align-right">
+                                        <button type="button" (click)="displayItemDetails(item.id)"
+                                            class="btn btn-info">
+                                            <i class="fas fa-edit"></i>Product Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> --> -->
+
+<div class="content" role="main">
+
+    <h3> If you book your flight and hotel together, you can save 20%! </h3>
+    
+    <div class="head-container">
+
+    <p>Flight no</p>
+    <button (click)="sortByName(allFlights)">Flight Name</button>
+    <p>source city</p>
+    <p>source time</p>
+
+    <!-- <img src="" > -->
+    <p>dest city</p>
+    <p>dest time</p>
+    <p>duration</p>
+    
+    <button style="margin: 15px 20px" (click)="sortByPrice(allFlights)">price</button>
+
+    </div>
+
+    <div *ngFor="let item of allFlights">
+        <div class="card-container" >
+            <p> {{ item.flightNumber }}</p>
+            <p> {{ item.flightName }}</p>
+            <p> {{ item.source }} </p>
+            <p> {{ item.departureTime }} </p>
+            <p> {{ item.destination }} </p>
+            <p> {{ item.arrivalTime }}</p>
+            <p> {{ item.duration }} </p>
+            <p> ${{item.cost }}</p>
+            <!-- <button style="margin-left: 500px" type="button" (click)="displayItemDetails(item.id)" class="button">
+                Book flight + hotel
+            </button>   -->
+            <button type="button" (click)="addToCart(item)" [disabled]="btnstate" class="button flightButton">
+                Book Flight
+            </button>
+            
+        </div>     
+    </div>
+</div>

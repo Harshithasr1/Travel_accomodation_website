@@ -1,0 +1,35 @@
+<p class="note">Please login to book a deal!</p>
+
+<div class="content" role="main">
+    
+    <div class="head-container">
+
+        <p>Flight no</p>
+        <p>Flight Name</p>
+        <p>Source city</p>
+        <p>Source time</p>
+        <p>Destination city</p>
+        <p>Destination time</p>
+        <p>Date </p>
+        <p>Duration</p>
+        <p>Price</p>
+    
+    </div>
+
+    <div *ngFor="let item of allDeals">
+        <div class="card-container card-list" >
+            <p> {{ item.flightNumber }}</p>
+            <p> {{ item.flightName }} </p>
+            <p> {{ item.source }} </p>
+            <p> {{ item.departureTime }} </p>
+            <p> {{ item.destination }} </p>
+            <p> {{ item.arrivalTime }} </p>
+            <p> {{ item.date }} </p>
+            <p> {{ item.duration }} </p>
+            <p> ${{ item.cost }} </p>
+
+            <button type="button" (click)="addToCart(item)" [disabled]="btnstate" class="button">
+                Book Deal
+            </button>
+        </div>
+    </div>

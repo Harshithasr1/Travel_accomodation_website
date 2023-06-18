@@ -1,0 +1,145 @@
+
+
+<div class="container">
+    <div *ngIf="showBill">
+        <div class="row">
+            <div class="table-responsive m-5">
+                <h3>Accumulated user mileage: {{currentUser.miles}}</h3>
+                <h3>Booking History</h3>
+                <table class="table">
+                    <tbody>
+                        <tr *ngFor="let bill of allBills">
+                            <td>
+                                <button type="button" class="btn btn-info w-100" data-toggle="collapse"
+                                    attr.data-target="#bill{{ bill.id }}">
+                                    <span class="float-left">Id: {{ bill.id }}</span>
+                                    <span class="float-middle">Date: {{ bill.date | date:'fullDate' }}</span>
+                                    <span class="float-right">Amount: {{ bill.amount | currency:'USD'}}</span>
+                                </button>
+                                <div class="collapse" id="bill{{ bill.id }}">
+                                    <div class="row mt-5">
+                                        <div class="col">
+                                            <div class="row mt-2">
+                                                <div class="col">
+                                                    <h1>Bill</h1>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h4>Tripify Services</h4>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="float-left">
+                                                        Contact Us: tripify@abc.com
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="float-right">
+                                                        Buyer Name: {{ currentBuyer.username  }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="float-left">
+                                                        Date: {{ bill.date | date:'fullDate'  }}
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="float-right">
+                                                        Buyer Id: {{ currentBuyer.id }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="float-left">
+                                                        Credit Card type: {{ currentBuyer.creditcardtype }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="float-left">
+                                                        Credit Card number: {{ currentBuyer.cardnumber }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="float-left">
+                                                        Expiration date: {{ currentBuyer.expiration }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="table-responsive m-2"></div>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Number</th>
+                                                    <th>Name</th>
+                                                    <th>Amount</th>
+                                                    <th>Tax</th>
+                                                    <th>Miles</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                
+                                                <ng-container *ngFor="let item of bill.allBillDetails">
+                                                   <tr *ngIf="item.item && item.item.cost!=0">
+                                                    <!-- <tr> -->
+                                                        <td>{{ item.item.flightNumber }}</td>
+                                                        <td>{{ item.item.flightName }}</td>
+                                                        <td>${{ item.item.cost }}</td>
+                                                        <td>${{ item.item.cost * 0.15 }}</td>
+                                                        <td>{{ item.item.miles }}</td>
+                                                    <!-- </tr> -->
+                                                </tr>
+                                                </ng-container>
+                                                <ng-container *ngFor="let item of bill.allBillDetails">
+                                                    <tr *ngIf="item.hotel && item.hotel.cost!=0">
+                                                    <!-- <tr> -->
+                                                        <td>{{ item.hotel.hotelNo }}</td>
+                                                        <td>{{ item.hotel.hotelName }}</td>
+                                                        <td>${{ item.hotel.cost }}</td>
+                                                        <td>${{ item.hotel.cost * 0.15 }}</td>
+                                                        <td> -- </td>
+                                                    <!-- </tr> -->
+                                                </tr>
+                                                </ng-container>
+
+                                                 
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <h5>Total:</h5>
+                                                    </td>
+                                                    <td>${{ bill.amount }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!showBill">
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <span class="display-4 text-danger">Purchase History is Empty!!</span>
+            </div>
+        </div>
+    </div>
+</div>

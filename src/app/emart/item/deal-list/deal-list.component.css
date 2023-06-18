@@ -1,0 +1,171 @@
+
+  .spacer {
+    flex: 1;
+  }
+
+  h3 {
+    font-family: Verdana, Tahoma, sans-serif cursive;
+    font-style: italic;
+    color: rgb(12, 58, 58);
+    text-align: center;
+  }
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background-image: url("/assets/flight-background.png");
+    font-weight: 600;
+  }
+
+  h1 {
+    padding-left: 300px;
+    font-family: Verdana, Tahoma, sans-serif cursive;
+    font-style: italic;
+    color: rgb(12, 58, 58);
+  }
+
+  .content {
+    display: flex;
+    margin: 25px auto 52px;
+    padding: 0 16px;
+    max-width: 1200px;
+    flex-direction: column;
+  }
+
+  .note {
+    font-family: Verdana, Tahoma, sans-serif cursive;
+    font-style: italic;
+    color: rgb(12, 58, 58);
+    font-size: larger;
+    margin-top: 30px;    
+    justify-content: center;
+    width: auto;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 26px;
+    border:  1px solid rgb(101, 100, 100);;
+    border-radius: 4px;
+    color: #3d8a8a;
+    background-color: transparent;
+    padding-left: 40px;
+  }
+
+  .head-container {
+    background-color: #3d8a8a;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-top: 26px;
+    border:  1px solid rgb(101, 100, 100);;
+    border-radius: 4px;
+    padding-left: 40px;
+  }
+
+  .head-container p {
+    color: white;
+  }
+
+  .card-container .card:not(.highlight-card) {
+    cursor: pointer;
+  }
+
+  .card-container .card:not(.highlight-card):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+  }
+
+  p{
+    color: rgb(40, 46, 85);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+    height: 60px;
+    width: 100px;
+    margin: 0 8px 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+  }
+
+  .highlight-card {
+    color: white;
+    height: 130px;
+    position: relative;
+    margin: 20px;
+  }
+
+  svg#clouds {
+    position: fixed;
+    bottom: -160px;
+    left: -230px;
+    z-index: -10;
+    width: 1920px;
+  }
+
+  #Path_39 {
+   fill: grey;
+   opacity: 0.5;
+  }
+
+  .button {
+    background-color: #4cafa8;
+    border-radius: 20px;
+    height: 35px;
+    color: white;
+    font-size: medium;
+    font-family: Verdana, Tahoma, sans-serif;
+    padding: 6px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  .flightButton {
+    background-color: #4c6faf;
+  }
+
+  .button:hover {
+    border: 2px solid rgb(133, 123, 123);
+  }
+
+  .login {
+    border-radius: 4px;
+    text-decoration: none;
+    color: rgb(40, 46, 85);
+    border: 2px solid rgb(96, 97, 188);
+    background-color: #a0dada;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+    height: 30px;
+    width: 100px;
+    margin: 0 8px 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login:hover {
+    transform: translateY(-3px);
+  }
+
+  .button {
+    background-color: #4c6faf;
+  }
+
+  .button:disabled {
+    background-color: #6d727b;
+  }

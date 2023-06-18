@@ -1,0 +1,55 @@
+
+<div class="container pt-5">
+	<div class="row">
+		<div class="col"></div>
+		<div class="col-15">
+			<div class="card">
+				<div class="card-header text-center">Sign Up</div>
+				<div class="card-body">
+					<form #signUpForm="ngForm"action="">
+						<div class="row">
+							<div class="col">
+								<div class="Form-group mx-2 my-3">
+									<label> Firstname:  </label>         
+									<input type="text"  name="firstname" id="firstname" size="15" [(ngModel)]="firstname" required/>  
+									<label> Middlename: </label>     
+									<input type="text"  name="middlename" id="middlename" size="15" [(ngModel)]="middlename"/>   
+									<label> Lastname: </label>         
+									<input type="text" name="lastname" id= "lastname" size="15" [(ngModel)]="lastname" required/> <br> <br> 
+									Address: 
+									<br>  
+									<textarea id="address" cols="50" rows="3" value="address" [(ngModel)]="address">  
+									</textarea>  
+									<br> <br>  
+									Email:  
+									<input type="email" id="email" name="email" [(ngModel)]="email" /> <br>    
+									<br> <br>
+									<label for="username">Username: </label>
+									<input type="text"  id="username"  name="username" [(ngModel)]="buyerusername">
+									<br> <br>
+									<label for="password">Password:</label>
+									<input type="text"  id="password" name="password" [(ngModel)]="buyerpassword">
+									<br><br>
+									<label for="creditcardtype">Credit Card Type: </label>
+									<input id="creditcardtype" maxlength="20" type="text" name="creditcardtype" [(ngModel)]="creditcardtype"><br>
+									<br>
+									<label for="cardnumber">Card Number:</label>
+									<input id="cardnumber" type="text" pattern="[0-9]*" name="cardnumber" [(ngModel)]="cardnumber">
+										
+									<label for="expiration">Expiration (mm/yy):</label>
+									<input id="expiration" type="text" pattern="[0-9]*" name= "expiration"[(ngModel)]="expiration">
+										
+									<label for="securitycode">CVV:</label>
+									<input id="cvv" type="text" pattern="[0-9]*" [(ngModel)]="cvv">
+								</div>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary float-right" (click)="addBuyer()">Register</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col">
+		</div>
+	</div>
+</div>

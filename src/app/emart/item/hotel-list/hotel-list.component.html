@@ -1,0 +1,191 @@
+<!-- <div fxLayout="column" fxFill>
+    <div fxLayout="row" fxFlex="10" style="background-color:lightgrey ;">
+    </div>
+    <div fxFlex fxLayout="row">
+        <div fxFlex="6" fxLayout="column" style="background-color:lightgrey;">
+
+        </div>
+        <div fxFlex fxLayout="column">
+            <div fxFlex="10" fxLayout="row" style="background-color:grey;">
+
+            </div>
+            <div fxFlex fxLayout="row">
+                <div class="example-container mat-elevation-z8">
+
+                    <div class="example-header">
+                        <mat-form-field>
+                            <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+                        </mat-form-field>
+                    </div>
+
+                    <mat-table #table [dataSource]="dataSource">
+
+                        <ng-container matColumnDef="hotel_name">
+                            <mat-header-cell *matHeaderCellDef> hotel_name </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.hotelName}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="hotel_no">
+                            <mat-header-cell *matHeaderCellDef> hotel_no </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.hotelNo}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="place">
+                            <mat-header-cell *matHeaderCellDef> place </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.place}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="check_in">
+                            <mat-header-cell *matHeaderCellDef> check_in </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.checkInDate}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="check_out">
+                            <mat-header-cell *matHeaderCellDef> check_out </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.checkOutDate}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="cost">
+                            <mat-header-cell *matHeaderCellDef> cost </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.cost}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="address">
+                            <mat-header-cell *matHeaderCellDef> address </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.address}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="phone_no">
+                            <mat-header-cell *matHeaderCellDef> phone_no </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.phoneNumber}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="ratings">
+                            <mat-header-cell *matHeaderCellDef> ratings </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.ratings}} </mat-cell>
+                        </ng-container>
+                        
+
+                        <ng-container matColumnDef="button">
+                            <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> <button type="button"
+                                    class="btn btn-primary-outline pull-right" (click)="addToCart(element);"><i
+                                        class="fa fa-plus"></i> Book</button> </mat-cell>
+                        </ng-container>
+
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    </mat-table>
+                </div>
+            </div>
+        </div>
+        <div fxFlex="6" fxLayout="column" style="background-color:lightgrey;">
+
+        </div>
+    </div>
+    <div fxLayout="row" fxFlex="5" style="background-color:lightgray ;">
+
+    </div>
+</div> -->
+
+<!-- <div fxLayout="column" fxFill>
+    <div fxLayout="row" fxFlex="10" style="background-color:lightgrey ;">
+    </div>
+    <div fxFlex fxLayout="row">
+        <div fxFlex="6" fxLayout="column" style="background-color:lightgrey;">
+
+        </div>
+        <div fxFlex fxLayout="column">
+            <div fxFlex="10" fxLayout="row" style="background-color:grey;">
+
+            </div>
+            <div fxFlex fxLayout="row">
+                <div class="example-container mat-elevation-z8">
+
+                    <div class="example-header">
+                        <mat-form-field>
+                            <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+                        </mat-form-field>
+                    </div>
+
+                    <mat-table #table [dataSource]="dataSource">
+
+                        <ng-container matColumnDef="hotel_name">
+                            <mat-header-cell *matHeaderCellDef> hotel_name </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.hotelName}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="place">
+                            <mat-header-cell *matHeaderCellDef> place </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.place}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="check_in">
+                            <mat-header-cell *matHeaderCellDef> check_in </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.checkInDate}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="check_out">
+                            <mat-header-cell *matHeaderCellDef> check_out </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.checkOutDate}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="price">
+                            <mat-header-cell *matHeaderCellDef> price </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.price}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="address">
+                            <mat-header-cell *matHeaderCellDef> address </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.address}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="phone_no">
+                            <mat-header-cell *matHeaderCellDef> phone_no </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.phoneNumber}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="ratings">
+                            <mat-header-cell *matHeaderCellDef> ratings </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.ratings}} </mat-cell>
+                        </ng-container>
+                        
+
+                        <ng-container matColumnDef="button">
+                            <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> <button type="button"
+                                    class="btn btn-primary-outline pull-right" (click)="addToCart(element);"><i
+                                        class="fa fa-plus"></i> Book</button> </mat-cell>
+                        </ng-container>
+
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    </mat-table>
+                </div>
+            </div>
+        </div>
+        <div fxFlex="6" fxLayout="column" style="background-color:lightgrey;">
+
+        </div>
+    </div>
+    <div fxLayout="row" fxFlex="5" style="background-color:lightgray ;">
+
+    </div>
+</div> -->
+
+<p class="note">Please login to book a hotel!</p> 
+
+<div class="content" role="main">
+    
+    <div class="head-container">
+
+        <button style="width: 200px;" (click)="sortByName(allHotels)">Hotel Name</button>
+        <button>City</button>
+        <button (click)="sortByRating(allHotels)">Star rating </button>
+        <p style="width: 150px; padding-left: 50px;">Address</p>
+        <p style="padding-left: 60px;">Phone Number</p>                
+        <button style="margin-left: 70px;" (click)="sortByPrice(allHotels)">Price</button>
+
+    </div>
+
+    <div *ngFor="let item of allHotels">
+        <div class="card-container">
+            <p style="width: 200px;"> {{ item.hotelName }}</p> <!-- Hotel name  -->
+            <p>{{item.place }}</p> 
+            <p>{{item.ratings }}</p> <!-- Hotel rating  -->
+            <p style="width: 150px;">{{item.address }}</p>
+            <p>{{item.phoneNumber}}</p> 
+            <p style="margin-left: 30px;">{{item.cost }}</p>
+            <button type="button" [disabled]="btnstate" (click)="addToCart(item)" class="button">
+                Book Hotel
+            </button>
+            
+        </div>     
+    
+    </div>
+</div>
